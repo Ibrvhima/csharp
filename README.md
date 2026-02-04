@@ -13,7 +13,7 @@ csharp/
 
 ---
 
-## 🗄️ CRUD MySQL - Gestion de Produits
+## 🗄️ CRUD  - Gestion de Produits
 
 Une application CRUD (Create, Read, Update, Delete) moderne et professionnelle pour la gestion de produits avec ASP.NET Core Razor Pages et MySQL.
 
@@ -110,18 +110,6 @@ cd CD-Logistics/web-version
 - **GitHub** : [@Ibrvhima](https://github.com/Ibrvhima)
 - **Repository** : https://github.com/Ibrvhima/csharp
 
----
-
-<div align="center">
-
-**🎯 Merci de visiter mes projets !**
-
-[![C#](https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white)](https://docs.microsoft.com/fr-fr/dotnet/csharp/)
-[![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
-[![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://html5.org/)
-
-</div>
 - **Design Responsive** optimisé pour mobile et desktop
 - **Interface Professionnelle** avec Bootstrap 5
 - **Animations fluides** et transitions élégantes
