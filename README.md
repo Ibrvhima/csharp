@@ -1,23 +1,124 @@
-# CRUDORY - Gestion de Produits
+# C# Projects
+
+Bienvenue dans mon repository de projets C# ! Ce repository contient différents projets développés avec C# et .NET.
+
+## 📁 Structure des Projets
+
+```
+csharp/
+├── 📁 crud/                    # CRUD MySQL - Gestion de Produits
+├── 📁 CD-Logistics/            # Site Web - Entreprise Logistique
+└── 📄 README.md                # Ce fichier
+```
+
+---
+
+## 🗄️ CRUD MySQL - Gestion de Produits
 
 Une application CRUD (Create, Read, Update, Delete) moderne et professionnelle pour la gestion de produits avec ASP.NET Core Razor Pages et MySQL.
 
-## 🚀 Fonctionnalités
+### 🚀 Fonctionnalités
 
-### 📊 Gestion des Données
+#### 📊 Gestion des Données
 - **CRUD Complet** : Création, lecture, mise à jour et suppression des produits
 - **Base de données MySQL** avec Entity Framework Core
 - **Pagination** pour les grandes listes de données
 - **Recherche avancée** par nom, catégorie et description
 - **Tri** par nom, catégorie, prix et date de création
 
-### 🌍 Multilingue
+#### 🌍 Multilingue
 - **Français 🇫🇷** et **Anglais 🇬🇧** supportés
 - Changement de langue instantané
 - Sauvegarde automatique de la langue préférée
 
-### 🎨 Interface Utilisateur
+#### 🎨 Interface Utilisateur
 - **Mode Sombre/Clair** avec sauvegarde automatique
+
+### 📂 Accès au Projet
+- **Dossier** : [`crud/`](./crud/)
+- **Lancement** : `cd crud && dotnet run`
+
+---
+
+## 🚢 CD-Logistics - Site Web Logistique
+
+Site web moderne et professionnel pour CD-Logistics, entreprise spécialisée en solutions logistiques complètes en Afrique de l'Ouest.
+
+### ✨ Fonctionnalités
+
+#### 🌐 Site Web Complet
+- **6 pages** : Accueil, Services, À Propos, Équipe, Expertise, Contact
+- **Design responsive** adapté à tous les appareils
+- **Navigation intuitive** avec menu actif
+- **Formulaire de contact** interactif
+- **FAQ** dynamique
+
+#### 🎨 Design & UX
+- **Interface moderne** avec animations fluides
+- **Icônes SVG** personnalisées et professionnelles
+- **Palette de couleurs** cohérente (rouge #B70C15)
+- **Typographie** optimisée (Open Sans)
+
+#### ⚡ Performances
+- **Code optimisé** pour un chargement rapide
+- **SEO friendly** avec balises sémantiques
+- **Cross-browser** compatible
+
+### 📂 Accès au Projet
+- **Dossier** : [`CD-Logistics/`](./CD-Logistics/)
+- **Site web** : Ouvrir `CD-Logistics/web-version/index.html`
+
+---
+
+## 🛠 Technologies Utilisées
+
+### Projet CRUD
+- **C#** avec ASP.NET Core Razor Pages
+- **MySQL** avec Entity Framework Core
+- **Bootstrap** pour le design responsive
+- **jQuery** pour les interactions
+
+### Projet CD-Logistics
+- **HTML5** - Structure sémantique moderne
+- **CSS3** - Design responsive avec Grid/Flexbox
+- **JavaScript ES6+** - Interactions et animations
+- **SVG** - Icônes vectorielles personnalisées
+
+---
+
+## 🚀 Démarrage Rapide
+
+### Pour le projet CRUD
+```bash
+cd crud
+dotnet run
+```
+
+### Pour le site CD-Logistics
+```bash
+cd CD-Logistics/web-version
+# Ouvrir index.html dans votre navigateur
+```
+
+---
+
+## 📞 Contact
+
+- **GitHub** : [@Ibrvhima](https://github.com/Ibrvhima)
+- **Repository** : https://github.com/Ibrvhima/csharp
+
+---
+
+<div align="center">
+
+**🎯 Merci de visiter mes projets !**
+
+[![C#](https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white)](https://docs.microsoft.com/fr-fr/dotnet/csharp/)
+[![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://html5.org/)
+
+</div>
 - **Design Responsive** optimisé pour mobile et desktop
 - **Interface Professionnelle** avec Bootstrap 5
 - **Animations fluides** et transitions élégantes
