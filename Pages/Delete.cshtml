@@ -1,0 +1,57 @@
+@page "{id:int}"
+@model CrudMySQL.Classic.Pages.DeleteModel
+@{
+    ViewData["Title"] = "Supprimer un produit - CRUDORY";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">🗑️ Supprimer un produit</h1>
+    
+    <div class="alert alert-danger">
+        <h4>⚠️ Confirmation de suppression</h4>
+        <p>Êtes-vous sûr de vouloir supprimer ce produit ? Cette action est irréversible.</p>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">Détails du produit à supprimer</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">ID:</dt>
+                        <dd class="col-sm-9">@Model.Produit.Id</dd>
+                        
+                        <dt class="col-sm-3">Nom:</dt>
+                        <dd class="col-sm-9">@Model.Produit.Nom</dd>
+                        
+                        <dt class="col-sm-3">Catégorie:</dt>
+                        <dd class="col-sm-9">@Model.Produit.Categorie</dd>
+                        
+                        <dt class="col-sm-3">Prix:</dt>
+                        <dd class="col-sm-9">@Model.Produit.Prix.ToString("C")</dd>
+                        
+                        <dt class="col-sm-3">Description:</dt>
+                        <dd class="col-sm-9">@(Model.Produit.Description ?? "-")</dd>
+                        
+                        <dt class="col-sm-3">Date Création:</dt>
+                        <dd class="col-sm-9">@Model.Produit.DateCreation.ToString("dd/MM/yyyy HH:mm")</dd>
+                    </dl>
+                    
+                    <form method="post">
+                        <input type="hidden" asp-for="Produit.Id" />
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-danger">
+                                🗑️ Confirmer la suppression
+                            </button>
+                            <a asp-page="./Index" class="btn btn-secondary">
+                                ❌ Annuler
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

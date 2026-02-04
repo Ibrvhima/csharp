@@ -1,0 +1,305 @@
+/* Mode sombre/clair */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #64748b;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --danger-color: #dc2626;
+    --info-color: #0891b2;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Mode clair (par défaut) */
+body {
+    background-color: var(--gray-50);
+    color: var(--gray-900);
+}
+
+.navbar {
+    background: white !important;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--gray-200);
+}
+
+.card-header {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.form-control {
+    background: white;
+    border: 1px solid var(--gray-300);
+    color: var(--gray-900);
+}
+
+.form-select {
+    background: white;
+    border: 1px solid var(--gray-300);
+    color: var(--gray-900);
+}
+
+.table th {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.table td {
+    border-bottom: 1px solid var(--gray-100);
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: var(--gray-900);
+    color: var(--gray-100);
+}
+
+body.dark-mode .navbar {
+    background: var(--gray-800) !important;
+    border-bottom: 1px solid var(--gray-700);
+}
+
+body.dark-mode .navbar-brand {
+    color: var(--gray-100) !important;
+}
+
+body.dark-mode .nav-link {
+    color: var(--gray-300) !important;
+}
+
+body.dark-mode .nav-link:hover {
+    color: var(--gray-100) !important;
+    background-color: var(--gray-700);
+}
+
+body.dark-mode .card {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+}
+
+body.dark-mode .card-header {
+    background: var(--gray-700);
+    border-bottom: 1px solid var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .form-control {
+    background: var(--gray-700);
+    border: 1px solid var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .form-control:focus {
+    background: var(--gray-600);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .form-select {
+    background: var(--gray-700);
+    border: 1px solid var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .table {
+    background: var(--gray-800);
+}
+
+body.dark-mode .table th {
+    background: var(--gray-700);
+    border-bottom: 1px solid var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .table td {
+    border-bottom: 1px solid var(--gray-700);
+    color: var(--gray-200);
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: var(--gray-700);
+}
+
+body.dark-mode .table-responsive {
+    background: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+body.dark-mode .modal-content {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+}
+
+body.dark-mode .modal-header {
+    background: var(--gray-700);
+    border-bottom: 1px solid var(--gray-600);
+}
+
+body.dark-mode .modal-body {
+    background: var(--gray-800);
+    color: var(--gray-100);
+}
+
+body.dark-mode .modal-footer {
+    background: var(--gray-700);
+    border-top: 1px solid var(--gray-600);
+}
+
+body.dark-mode .alert {
+    background: var(--gray-700);
+    border-color: var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .alert-info {
+    background: #1e3a8a;
+    border-color: #1e40af;
+    color: #dbeafe;
+}
+
+body.dark-mode .alert-warning {
+    background: #713f12;
+    border-color: #b45309;
+    color: #fef3c7;
+}
+
+body.dark-mode .text-muted {
+    color: var(--gray-400) !important;
+}
+
+body.dark-mode .badge {
+    background: var(--gray-600);
+    color: var(--gray-100);
+}
+
+body.dark-mode .badge.bg-dark {
+    background: var(--gray-500) !important;
+}
+
+body.dark-mode .badge.bg-secondary {
+    background: var(--gray-600) !important;
+}
+
+/* Bouton de changement de thème */
+.theme-toggle {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Sélecteur de langue */
+.language-selector {
+    position: fixed;
+    top: 140px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-selector select {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+
+/* Boutons d'export */
+.export-buttons {
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.export-buttons .btn {
+    background: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.export-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.export-buttons .btn.btn-danger {
+    background: var(--danger-color);
+}
+
+/* Animations de transition */
+body, .navbar, .card, .form-control, .form-select, .table {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Responsive pour les boutons flottants */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        top: 70px;
+        right: 10px;
+    }
+    
+    .language-selector {
+        top: 120px;
+        right: 10px;
+    }
+    
+    .export-buttons {
+        top: 170px;
+        right: 10px;
+    }
+    
+    .export-buttons .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

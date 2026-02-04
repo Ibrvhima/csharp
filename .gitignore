@@ -1,0 +1,172 @@
+# Ignore les fichiers générés par Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore les fichiers générés par .NET
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vspscc
+
+# Ignore les fichiers de configuration locaux
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+
+# Ignore les fichiers de base de données
+*.db
+*.sqlite
+*.mdf
+*.ldf
+*.ndf
+*.sdf
+
+# Ignore les fichiers de logs
+logs/
+*.log
+
+# Ignore les fichiers temporaires
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Ignore les fichiers de build
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ebugNetCoreAppContent/
+[Dd]ebugNETCoreApp/
+[Dd]ebug/netcoreapp3.1/
+[Dd]ebug/netcoreapp2.2/
+[Dd]ebug/netcoreapp2.1/
+[Dd]ebug/netcoreapp2.0/
+[Dd]ebug/netcoreapp1.1/
+[Dd]ebug/netcoreapp1.0/
+[Dd]ebug/net46/
+[Dd]ebug/net45/
+[Dd]ebug/netcoreapp*/
+
+# Ignore les fichiers de packages NuGet
+packages/
+*.nupkg
+*.snupkg
+**/project.lock.json
+**/project.fragment.lock.json
+**/project.assets.json
+
+# Ignore les fichiers de test
+TestResults/
+Coverage/
+*.trx
+*.coverage
+*.xunit
+*.testlog
+
+# Ignore les fichiers de documentation
+docs/_site/
+docs/.vs/
+docs/.gitignore
+
+# Ignore les fichiers de l'IDE Rider
+.idea/
+*.iml
+*.ipr
+*.iws
+*.idea_modules/
+*.idea/
+
+# Ignore les fichiers de configuration VS Code
+.vscode/
+*.code-workspace
+
+# Ignore les fichiers macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore les fichiers Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Ignore les fichiers Linux
+*~
+.*.swp
+.*.swo
+.*.swn
+
+# Ignore les fichiers de sauvegarde automatique
+*.bak
+*.backup
+*.orig
+
+# Ignore les fichiers de cache
+.cache/
+*.cache
+
+# Ignore les fichiers de node_modules (si utilisé)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore les fichiers de bower_components (si utilisé)
+bower_components/
+
+# Ignore les fichiers de dist (build output)
+dist/
+build/
+
+# Ignore les fichiers de coverage
+coverage/
+*.lcov
+
+# Ignore les fichiers de secrets
+secrets/
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Ignore les fichiers de configuration environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore les fichiers de base de données locales
+*.sqlite3
+*.sqlite-journal
+
+# Ignore les fichiers de logs de base de données
+*.db-shm
+*.db-wal
+
+# Ignore les fichiers de migration
+*.sqlplan
+
+# Ignore les fichiers de documentation générée
+*.xml
+*.html
+*.json
+
+# Ignore les fichiers de configuration spécifiques à la machine
+*.user
+*.suo
+*.userosscache
+*.sln.docstates

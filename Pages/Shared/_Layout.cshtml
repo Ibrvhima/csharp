@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CRUD MySQL</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/theme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CrudMySQL.Classic.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    CRUDORY
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Index">
+                                Accueil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Create">
+                                Ajouter
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Fonctionnalités ajoutées dans le header -->
+                    <ul class="navbar-nav">
+                        <!-- Sélecteur de langue -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe"></i> Langue
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="?language=fr">
+                                        🇫🇷 Français
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="?language=en">
+                                        🇬🇧 English
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Boutons d'export -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-download"></i> Exporter
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/export/excel">
+                                        <i class="fas fa-file-excel text-success"></i> Excel
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/export/pdf">
+                                        <i class="fas fa-file-pdf text-danger"></i> PDF
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <button class="dropdown-item" onclick="showHistory()">
+                                        <i class="fas fa-history text-info"></i> Historique
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Mode sombre/clair -->
+                        <li class="nav-item">
+                            <button class="btn btn-link nav-link" onclick="toggleTheme()" title="Changer le thème">
+                                <i class="fas fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="main-content">
+        <div class="container">
+            <main role="main" class="py-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p class="text-muted mb-0">© 2026 CRUDORY - Gestion de produits</p>
+        </div>
+    </footer>
+
+    <!-- Modal d'historique -->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyModalLabel">
+                        <i class="fas fa-history me-2"></i>
+                        Historique
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="historyContent">
+                        <div class="text-center">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    
+    <script>
+        // Gestion du thème
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Charger le thème sauvegardé
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
+            }
+        }
+        
+        // Modal d'historique
+        function showHistory() {
+            const modal = new bootstrap.Modal(document.getElementById('historyModal'));
+            const content = document.getElementById('historyContent');
+            
+            // Charger l'historique
+            fetch('/export/history')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        content.innerHTML = '<div class="text-center text-muted">Aucun historique disponible</div>';
+                    } else {
+                        let html = '<div class="table-responsive"><table class="table"><thead><tr><th>Date</th><th>Action</th><th>Entité</th><th>Utilisateur</th></tr></thead><tbody>';
+                        data.forEach(item => {
+                            html += `<tr><td>${new Date(item.dateModification).toLocaleString()}</td><td>${item.action}</td><td>${item.entityName}</td><td>${item.utilisateur}</td></tr>`;
+                        });
+                        html += '</tbody></table></div>';
+                        content.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    content.innerHTML = '<div class="alert alert-danger">Erreur lors du chargement de l\'historique</div>';
+                });
+            
+            modal.show();
+        }
+        
+        // Initialiser le thème au chargement
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
+</body>
+</html>
