@@ -104,6 +104,9 @@ cd CD-Logistics/web-version
 
 ## 📞 Contact
 
+-**Nom** : IBRAHIMA DIALLO
+-**Matricul** : B1323 27GI
+-**Licence** : 4
 - **GitHub** : [@Ibrvhima](https://github.com/Ibrvhima)
 - **Repository** : https://github.com/Ibrvhima/csharp
 
