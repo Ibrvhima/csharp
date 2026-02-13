@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:StudentCRUD.Models"
+             x:Class="StudentCRUD.MainPage"
+             Title="Student Management"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            
+            <!-- Header -->
+            <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="10">
+                <StackLayout>
+                    <Label Text="🎓" FontSize="32" HorizontalOptions="Center"/>
+                    <Label Text="Student Management" FontSize="24" FontAttributes="Bold" 
+                           TextColor="White" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Formulaire -->
+            <Frame BackgroundColor="White" Padding="20" CornerRadius="10">
+                <StackLayout Spacing="15">
+                    <Label Text="📝 Add Student" FontSize="18" FontAttributes="Bold"/>
+                    
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Entry Grid.Column="0" x:Name="FirstNameEntry" Placeholder="First Name"/>
+                        <Entry Grid.Column="1" x:Name="LastNameEntry" Placeholder="Last Name"/>
+                    </Grid>
+                    
+                    <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email"/>
+                    <Entry x:Name="PhoneEntry" Placeholder="Phone" Keyboard="Telephone"/>
+                    <Entry x:Name="CourseEntry" Placeholder="Course"/>
+                    <DatePicker x:Name="EnrollmentDatePicker"/>
+                    
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button Grid.Column="0" x:Name="AddBtn" Text="➕ Add" 
+                                Clicked="OnAddClicked" BackgroundColor="#4CAF50" TextColor="White"/>
+                        <Button Grid.Column="1" x:Name="UpdateBtn" Text="💾 Update" 
+                                Clicked="OnUpdateClicked" IsEnabled="False" BackgroundColor="#FF9800" TextColor="White"/>
+                    </Grid>
+                    
+                    <Button x:Name="ClearBtn" Text="🔄 Clear" 
+                            Clicked="OnClearClicked" BackgroundColor="#9E9E9E" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Bouton pour afficher la liste -->
+            <Button x:Name="ToggleListBtn" Text="👁️ Show Students" 
+                    Clicked="OnToggleListClicked" BackgroundColor="#673AB7" TextColor="White"/>
+
+            <!-- Liste des étudiants -->
+            <Frame x:Name="StudentListFrame" BackgroundColor="White" Padding="20" CornerRadius="10" IsVisible="False">
+                <StackLayout Spacing="15">
+                    <Label Text="📊 Student Directory" FontSize="18" FontAttributes="Bold"/>
+                    <Label x:Name="CountLabel" Text="0 students" FontSize="14" TextColor="#666"/>
+                    
+                    <!-- En-têtes du tableau -->
+                    <Frame BackgroundColor="#F8F9FA" Padding="10" Margin="0,5" CornerRadius="5">
+                        <Grid ColumnDefinitions="*,*,*,Auto,Auto">
+                            <Label Grid.Column="0" Text="Nom Complet" FontAttributes="Bold" FontSize="14" TextColor="#2196F3"/>
+                            <Label Grid.Column="1" Text="Email" FontAttributes="Bold" FontSize="14" TextColor="#2196F3"/>
+                            <Label Grid.Column="2" Text="Cours" FontAttributes="Bold" FontSize="14" TextColor="#2196F3"/>
+                            <Label Grid.Column="3" Text="Actions" FontAttributes="Bold" FontSize="14" TextColor="#2196F3" HorizontalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                    <BoxView HeightRequest="1" Color="#E0E0E0" Margin="10,0"/>
+                    
+                    <CollectionView x:Name="StudentsCollection">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid Padding="10" ColumnDefinitions="*,*,*,Auto,Auto">
+                                        <Label Grid.Column="0" Text="{Binding FullName}" VerticalOptions="Center" FontSize="12"/>
+                                        <Label Grid.Column="1" Text="{Binding Email}" VerticalOptions="Center" FontSize="12" TextColor="#666"/>
+                                        <Label Grid.Column="2" Text="{Binding Course}" VerticalOptions="Center" FontSize="12" TextColor="#666"/>
+                                        <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="Center" Spacing="5">
+                                            <Button Text="✏️" WidthRequest="35" HeightRequest="35" 
+                                                    Clicked="OnEditClicked" CommandParameter="{Binding .}" 
+                                                    BackgroundColor="#2196F3" TextColor="White" CornerRadius="5"/>
+                                            <Button Text="🗑️" WidthRequest="35" HeightRequest="35" 
+                                                    Clicked="OnDeleteClicked" CommandParameter="{Binding .}" 
+                                                    BackgroundColor="#F44336" TextColor="White" CornerRadius="5"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <BoxView HeightRequest="1" Color="#F0F0F0" Margin="10,0"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        
+                        <CollectionView.EmptyView>
+                            <StackLayout HorizontalOptions="Center" Padding="20">
+                                <Label Text="📚" FontSize="48" HorizontalOptions="Center"/>
+                                <Label Text="No students yet" FontSize="16" HorizontalOptions="Center"/>
+                                <Label Text="Add your first student above" FontSize="14" TextColor="#666" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
